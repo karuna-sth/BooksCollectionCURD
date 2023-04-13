@@ -2,6 +2,22 @@
 {% load static %}
 {% block start %}
 <div class="container mt-5">
-    <h1>LIST OF BOOKS</h1>
+    <h1>LIST OF BOOKS</h1> <a href="addbook">Add Books</a><hr>
+    <div class="row row-cols-3 g-3">
+        {% for book in books %}
+            <div class="col">
+                <div class="card">
+                    <img src="/media/{{book.image}}" width="40" height="400"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{book.book_name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Written By: {{book.book_writer}}</h6>
+                        <p class="card-text">{{book.book_description}}</p>
+                        <a href="#" class="btn btn-primary">Edit Details</a>
+                        <a href="deletebook/{{book.id}}" class="btn btn-secondary float-end">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
