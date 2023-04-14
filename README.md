@@ -38,7 +38,7 @@ python manage.py migrate
 ## Usage 
 1. Start server
 ```bash
-python manage.py run server
+python manage.py runserver
 ```
 2. open web browser and navigate to ``` http://127.0.0.1:8000/ ```
 
