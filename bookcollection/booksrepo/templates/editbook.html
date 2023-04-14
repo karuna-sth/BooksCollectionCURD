@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block  start %}
+
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Book Name</label>
+            <input type="text" name="book_name" class="form-control" value="{{book.book_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Book Writer</label>
+            <input type="text" name="book_writer" class="form-control" value="{{book.book_writer}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Book Description</label>
+            <textarea class="form-control" name="book_description" id="exampleFormControlTextarea1" rows="3">{{book.book_description}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Book Image</label>
+            <input type="file" name="image" class="form-control" >
+        </div>
+        <button type="submit" class="btn btn-primary">Update Book</button>
+    </form>
+</div>
+
+{% endblock %}
