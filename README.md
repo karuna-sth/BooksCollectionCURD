@@ -19,7 +19,7 @@ env/scripts/activate
 ```bash
 pip install -r requirements.txt
 ```
-5. Change Database infor in setting.py
+5. Change Database information in setting.py
 ```bash
 DATABASES = {
     'default': {
